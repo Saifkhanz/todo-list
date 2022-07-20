@@ -1,11 +1,7 @@
-var counter = 0;
-var completetdTaskCounter = 0;
-//var completedTaskCount = [];
 var tasks = [];
 //This function add task
 function addTask() {
   document.getElementById("error").innerHTML = "";
-
   newTask = document.getElementById("NewTask");
 
   if (newTask.value == "") {
@@ -15,10 +11,9 @@ function addTask() {
       name: newTask.value,
       isCompeleted: false,
     });
-    counter++;
-    document.getElementById("TaskTotal").innerHTML = counter;
-    newTask.value = "";
 
+    document.getElementById("TaskTotal").innerHTML = totalCount();
+    newTask.value = "";
     renderTasks();
   }
 }
@@ -30,9 +25,11 @@ function renderTasks() {
     new_row = document.createElement("tr");
     new_row.className = "task";
     new_row.insertCell(0).innerHTML =
-      `<input type='checkbox' onclick='completedTask("` +
+      `<input type='checkbox' onclick='completedTask(` +
       index +
-      `")' name='checkbox' class="check">`;
+      `)' name='checkbox' class="check" ` +
+      (task.isCompeleted ? "checked" : "") +
+      `>`;
     new_row.insertCell(1).innerHTML = task.name;
     new_row.insertCell(2).innerHTML =
       '<a href="javascript:void(0)" onclick="deleteTask(' +
@@ -44,41 +41,48 @@ function renderTasks() {
     //getTotal();
   });
 }
-
+function totalCount() {
+  var arr = tasks.length;
+  console.log(arr);
+  return arr;
+}
 function editTask(taskId) {
-  //TaskListContainer.innerHTML = task[taskId];
-  var temp = (document.getElementById("NewTask").value = tasks[taskId].name);
-  //tasks.splice(taskId, 0, temp);
-  console.log(temp);
-  console.log(taskId);
-  //taskId = newTask.value;
-  tasks[taskId].name = newTask.value;
-  tasks[taskId].isCompeleted = false;
-  document.getElementById("btn1").innerHTML = "Update";
-  renderTasks();
-  deleteTask(taskId);
+  var oldValue = tasks[taskId].name;
+  var newValue = prompt("New Value?", oldValue);
+  if (!newValue) {
+    return;
+  }
+  tasks[taskId].name = newValue;
+  this.renderTasks();
+  return;
 }
 
 // this function is used for counted completed task
 function completedTask(taskId) {
   if (tasks[taskId].isCompeleted === false) {
-    completetdTaskCounter++;
     tasks[taskId].isCompeleted = true;
   } else {
-    completetdTaskCounter--;
     tasks[taskId].isCompeleted = false;
   }
-  //const completedTasks = tasks.filter((task) => task.isCompeleted === true);
-  total_completed_task = document.getElementById("TaskCompleted");
-  total_completed_task.innerHTML = completetdTaskCounter;
-  //total_completed_task.innerHTML = completedTasks.length;
+  //   this.renderTasks();
+  this.countCompleted();
 }
 //this function used for deleting total task
 function deleteTask(taskIndex) {
   tasks.splice(taskIndex, 1);
-  counter--;
-  document.getElementById("TaskTotal").innerHTML = counter;
+  //counter--;
+  document.getElementById("TaskTotal").innerHTML = totalCount();
   renderTasks();
+}
+
+function countCompleted() {
+  var completed = 0;
+  this.tasks.forEach(function (task) {
+    if (task.isCompeleted) {
+      completed++;
+    }
+  });
+  document.getElementById("TaskCompleted").innerHTML = completed;
 }
 // function getTotalCompletedTask() {
 //   var rowCount = document.querySelectorAll("#TaskList tr.completed").length;

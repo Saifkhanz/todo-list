@@ -1,5 +1,5 @@
 var counter = 0;
-var comp = 0;
+var completetdTaskCounter = 0;
 //var completedTaskCount = [];
 var tasks = [];
 //This function add task
@@ -47,7 +47,7 @@ function renderTasks() {
 
 function editTask(taskId) {
   //TaskListContainer.innerHTML = task[taskId];
-  // alert("maaaaan jaaaoooo yaaaaar");
+
   var temp = (document.getElementById("NewTask").value = tasks[taskId].name);
   //tasks.splice(0, taskId, temp);
   deleteTask(taskId);
@@ -56,15 +56,15 @@ function editTask(taskId) {
 // this function is used for counted completed task
 function completedTask(taskId) {
   if (tasks[taskId].isCompeleted === false) {
-    comp++;
+    completetdTaskCounter++;
     tasks[taskId].isCompeleted = true;
   } else {
-    comp--;
+    completetdTaskCounter--;
     tasks[taskId].isCompeleted = false;
   }
   //const completedTasks = tasks.filter((task) => task.isCompeleted === true);
   total_completed_task = document.getElementById("TaskCompleted");
-  total_completed_task.innerHTML = comp;
+  total_completed_task.innerHTML = completetdTaskCounter;
   //total_completed_task.innerHTML = completedTasks.length;
 }
 //this function used for deleting total task
@@ -94,43 +94,43 @@ function deleteTask(taskIndex) {
 }
 */
 // function isChecked() {
-//   alert("dbjkdfnldfghlkdldfgl");
+//
 //   var temp = document.getElementsByClassName("check").value;
 //   console.log(temp);
-//   //alert("ab toh ho jaa");
+//
 //   if (document.getElementsByClassName("check").checked) {
-//     comp--;
+//     completetdTaskCounter--;
 //     total_completed_task = document.getElementById("TaskCompleted");
-//     total_completed_task.innerHTML = comp;
-//     alert("ab toh ho jaa");
+//     total_completed_task.innerHTML = completetdTaskCounter;
+//
 //   } else {
-//     comp++;
+//     completetdTaskCounter++;
 //     total_completed_task = document.getElementById("TaskCompleted");
-//     total_completed_task.innerHTML = comp;
-//     alert("kab hoga");
+//     total_completed_task.innerHTML = completetdTaskCounter;
+//
 //   }
 // }
 // function com(isCompeleted) {
 //   console.log(isCompeleted);
 //   var flag = 1;
 //   if (isCompeleted === "false" && flag) {
-//     alert("ab toh ho jaa!");
+//
 //     isCompeleted = "true";
-//     comp++;
+//     completetdTaskCounter++;
 //     alert(isCompeleted);
 //     flag = 0;
 //   } else {
-//     comp--;
-//     alert("kab hoga jaa!");
+//     completetdTaskCounter--;
+//
 //     isCompeleted = "false";
 //     alert(isCompeleted);
 //   }
 //   total_completed_task = document.getElementById("TaskCompleted");
-//   total_completed_task.innerHTML = comp;
-//   //comp = 0;
+//   total_completed_task.innerHTML = completetdTaskCounter;
+//   //completetdTaskCounter = 0;
 // }
 // function lastTry(taskId) {
 //   var tempIndex = taskId;
-//   alert("ummeed");
+//
 //   document.getElementsByClassName("task").textContent = "Task Completed";
-// }
+// }\

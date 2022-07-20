@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    /* margin-left: 50px; */
+    height: 200px;
+    border: 1px white solid;
+    background-color: white;
+    width: 40%;
+}
+.nav{
+   display: inline; 
+   padding-left: 10px;
+}
+#NewTask{
+    height:37px;
+    border: 2px grey solid;
+ border-radius: 5px;
+ width: 260px;
+
+}
+.button_div{
+    position: relative;
+    left: 280px;
+    bottom:40px;
+
+}
+#btn1{
+    height:38px;
+    width:80px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.829);
+    color: white;
+}
+::placeholder{
+    padding-left: 15px;
+}
+#TaskListContainer{
+    padding: 10px;
+    width:fit-content;
+}
+#TaskList tr {
+    border: 2px solid rgb(204, 202, 202);
+}
+
+
+.mystyle{
+    border: 2px solid black;
+}
+
+TaskList {
+    width: 100%;
+}
+/* #TaskList tr td:nth-child(1),#TaskList tr td:nth-child(2){
+    width:20%;
+} */
+
+td{
+    word-wrap:break-word;
+}
+
+/* #TaskList tr td:nth-child(3){
+    width:40%;
+    text-align: right;
+} */
+/* #TaskList tr td:nth-child(4){
+    width:20%;
+    text-align: right;
+} */
+.tr1{
+    border: 2px solid black;
+}
+.task{
+    width: fit-content;
+    height: 30px;
+    color: brown;
+    border-bottom: 5px solid crimson;
+}

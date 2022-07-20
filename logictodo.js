@@ -47,14 +47,14 @@ function renderTasks() {
 
 function editTask(taskId) {
   //TaskListContainer.innerHTML = task[taskId];
-
   var temp = (document.getElementById("NewTask").value = tasks[taskId].name);
   //tasks.splice(taskId, 0, temp);
   console.log(temp);
   console.log(taskId);
   //taskId = newTask.value;
-  tasks[taskId].name = temp;
+  tasks[taskId].name = newTask.value;
   tasks[taskId].isCompeleted = false;
+  document.getElementById("btn1").innerHTML = "Update";
   renderTasks();
   deleteTask(taskId);
 }

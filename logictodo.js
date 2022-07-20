@@ -6,7 +6,7 @@ var tasks = [];
 function addTask() {
   document.getElementById("error").innerHTML = "";
 
-  let newTask = document.getElementById("NewTask");
+  newTask = document.getElementById("NewTask");
 
   if (newTask.value == "") {
     document.getElementById("error").innerHTML = "Please Enter the task";
@@ -49,7 +49,13 @@ function editTask(taskId) {
   //TaskListContainer.innerHTML = task[taskId];
 
   var temp = (document.getElementById("NewTask").value = tasks[taskId].name);
-  //tasks.splice(0, taskId, temp);
+  //tasks.splice(taskId, 0, temp);
+  console.log(temp);
+  console.log(taskId);
+  //taskId = newTask.value;
+  tasks[taskId].name = temp;
+  tasks[taskId].isCompeleted = false;
+  renderTasks();
   deleteTask(taskId);
 }
 

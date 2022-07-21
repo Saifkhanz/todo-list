@@ -67,6 +67,7 @@ function markTaskAsCompleted(taskId) {
 }
 //this function used for deleting total task
 function deleteTask(taskIndex) {
+  if (!confirm("Are you sure want to delete!")) return;
   tasks.splice(taskIndex, 1);
   document.getElementById("TaskTotal").innerHTML = countTotalTask();
   renderTasks();

@@ -1,79 +1,88 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
-.container{
-    height: auto;
-    border: 1px white solid;
-    background-color: white;
-    width: 450px;
-}
-.nav{
-   display: inline; 
-   padding-left: 10px;
-}
-#NewTask{
-    height:37px;
-    border: 2px grey solid;
- border-radius: 5px;
- width: 260px;
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        height: auto;
+        border: 1px white solid;
+        background-color: white;
+        width: 450px;
+    }
+    .nav{
+    display: inline; 
+    padding-left: 10px;
+    }
+    #NewTask{
+        height:37px;
+        border: 2px grey solid;
+    border-radius: 5px;
+    width: 260px;
 
-}
-.button_div{
-    position: relative;
-    left: 280px;
-    bottom:40px;
+    }
+    .button_div{
+        position: relative;
+        left: 280px;
+        bottom:40px;
 
-}
-#btn1{
-    height:38px;
-    width:80px;
-    border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.829);
-    color: white;
-}
-::placeholder{
-    padding-left: 15px;
-}
-#TaskListContainer{
-    padding: 10px;
-    width:fit-content;
-}
-#TaskList tr td {
-   font-size:20px;
-}
-.checkbox1{
-    width:30px;
-    height: 20px;
-    margin-right:8px;
-}
+    }
+    #btn1{
+        height:38px;
+        width:80px;
+        border-radius: 6px;
+        background-color: rgba(0, 0, 0, 0.829);
+        color: white;
+    }
+    #btn1:hover{
+        animation-name: example; 
+        animation-duration: 2s;
+    }
+    @keyframes example {
+        from {background-color:black;}
+        to {background-color: whitesmoke;
+        color: black;}
+      }
+    ::placeholder{
+        padding-left: 15px;
+    }
+    #TaskListContainer{
+        padding: 10px;
+        width:fit-content;
+    }
+    #TaskList tr td {
+    font-size:20px;
+    }
+    .checkbox1{
+        width:30px;
+        height: 20px;
+        margin-right:8px;
+    }
 
-.mystyle{
-    border: 2px solid black;
-}
+    .mystyle{
+        border: 2px solid black;
+    }
 
-TaskList {
-    width: 100%;
-}
-/* #TaskList tr td:nth-child(1),#TaskList tr td:nth-child(2){
-    width:20%;
-} */
+    TaskList {
+        width: 100%;
+    }
+    /* #TaskList tr td:nth-child(1),#TaskList tr td:nth-child(2){
+        width:20%;
+    } */
 
-td{
-    word-wrap:break-word;
-}
+    td{
+        word-wrap:break-word;
+    }
 
-/* #TaskList tr td:nth-child(3){
-    width:40%;
-    text-align: right;
-} */
-/* #TaskList tr td:nth-child(4){
-    width:20%;
-    text-align: right;
-} */
-.tr1{
-    border: 2px solid black;
-}
-.task{
-      height: 30px;
-}
+    /* #TaskList tr td:nth-child(3){
+        width:40%;
+        text-align: right;
+    } */
+    /* #TaskList tr td:nth-child(4){
+        width:20%;
+        text-align: right;
+    } */
+    .tr1{
+        border: 2px solid black;
+    }
+    .task{
+        height: 30px;
+    }

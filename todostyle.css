@@ -3,11 +3,10 @@
     padding: 0px;
 }
 .container{
-    /* margin-left: 50px; */
-    height: 200px;
+    height: auto;
     border: 1px white solid;
     background-color: white;
-    width: 40%;
+    width: 450px;
 }
 .nav{
    display: inline; 
@@ -40,10 +39,14 @@
     padding: 10px;
     width:fit-content;
 }
-#TaskList tr {
-    border: 2px solid rgb(204, 202, 202);
+#TaskList tr td {
+   font-size:20px;
 }
-
+.checkbox1{
+    width:30px;
+    height: 20px;
+    margin-right:8px;
+}
 
 .mystyle{
     border: 2px solid black;
@@ -72,8 +75,5 @@ td{
     border: 2px solid black;
 }
 .task{
-    width: fit-content;
-    height: 30px;
-    color: brown;
-    border-bottom: 5px solid crimson;
+      height: 30px;
 }

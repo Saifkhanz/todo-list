@@ -36,7 +36,9 @@ function renderTasks() {
       index +
       ')"></i>';
     new_row.insertCell(3).innerHTML =
-      '<button onclick="editTask(' + index + ')"name="edit">EDIT';
+      '<button onclick="editTask(' +
+      index +
+      ')"name="edit" class="editButton">EDIT';
     TaskListContainer.appendChild(new_row);
   });
 }
